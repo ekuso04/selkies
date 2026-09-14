@@ -44,7 +44,7 @@ docker compose up -d desktop
 http://localhost:8080
 ```
 
-4. ログイン画面でパスワード`mypasswd`を入力します。
+4. ログイン画面でユーザー名`ubuntu`パスワード`mypasswd`を入力します。
 
 ## パスワード変更
 
