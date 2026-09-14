@@ -1,6 +1,6 @@
 # Selkies を使った Ubuntu エミュレーター
 
-このワークスペースでは日本語向けに最適化をしています
+このワークスペースでは日本語向けに最適化をしています。
 このワークスペースでは、[selkies-project/selkies](https://github.com/selkies-project/selkies) を使って、UbuntuのデスクトップをWebブラウザから操作できるエミュレーター環境を起動するためのCompose設定を作成しました。
 
 ## 概要
