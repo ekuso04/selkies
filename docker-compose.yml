@@ -1,0 +1,30 @@
+services:
+  desktop:
+    image: ghcr.io/selkies-project/selkies/desktop:main-ubuntu26.04
+    environment:
+      SELKIES_MODE: ${SELKIES_MODE:-websockets}
+      SELKIES_ENABLE_DUAL_MODE: ${SELKIES_ENABLE_DUAL_MODE:-false}
+      SELKIES_PORT: ${SELKIES_PORT:-8080}
+      SELKIES_ENABLE_HTTPS: ${SELKIES_ENABLE_HTTPS:-false}
+      PASSWD: ${PASSWD:-mypasswd}
+      START_LXQT: ${START_LXQT:-true}
+      SELKIES_ENABLE_RESIZE: ${SELKIES_ENABLE_RESIZE:-true}
+      LANG: ja_JP.UTF-8
+      LC_ALL: ja_JP.UTF-8
+      LANGUAGE: ja_JP:ja
+      TZ: Asia/Tokyo
+    entrypoint:
+      - /bin/bash
+      - -lc
+      - |
+        sed -i 's/^# \(ja_JP.UTF-8 UTF-8\)/\1/' /etc/locale.gen || true
+        /usr/sbin/locale-gen ja_JP.UTF-8 >/dev/null 2>&1 || true
+        /usr/bin/localedef -i ja_JP -f UTF-8 ja_JP.UTF-8 >/dev/null 2>&1 || true
+        exec /etc/container-entrypoint.sh
+    volumes:
+      - selkies-home:/home/ubuntu
+    network_mode: host
+    shm_size: "2gb"
+
+volumes:
+  selkies-home:
