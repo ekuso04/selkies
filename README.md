@@ -27,25 +27,19 @@ docker compose version
 
 ## 起動手順
 
-1. イメージを取得します。
-
-```bash
-docker compose pull desktop
-```
-
-2. コンテナを起動します。
+1. コンテナを起動します。(初回はイメージファイルの取得を行うため時間がかかります。)
 
 ```bash
 docker compose up -d desktop
 ```
 
-3. ブラウザで開きます。
+2. ブラウザで開きます。
 
 ```text
 http://localhost:8080
 ```
 
-4. ログイン画面でユーザー名`ubuntu`パスワード`mypasswd`を入力します。
+3. ログイン画面でユーザー名`ubuntu`パスワード`mypasswd`を入力します。
 
 ## パスワード変更
 
